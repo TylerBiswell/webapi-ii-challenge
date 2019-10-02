@@ -4,9 +4,11 @@ const postsRouter = require('./posts/posts-router');
 
 const server = express();
 
+server.use(express.json());
+
 server.use('/api/posts', postsRouter);
 
-server.get('/', (req, res) => res.send('IT IS WORKING!'));
+server.get('/', (req, res) => res.send('API up and running!'));
 
 const port = 8000;
 server.listen(port, () =>
